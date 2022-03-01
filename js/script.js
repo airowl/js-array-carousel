@@ -39,11 +39,17 @@ const imgElements = document.querySelectorAll('.img-element');
 imgElements[0].classList.add('active');
 console.log(imgElements);
 
+// thumbnails
+const imgThumnails = document.querySelectorAll('.img-list > li');
+imgThumnails[0].classList.add('active');
+console.log(imgThumnails);
+
 // bottoni
 const btnPrevious = document.querySelector('.previous');
 const btnNext = document.querySelector('.next');
 
 let activeImg = 0;
+let activeThum = 0;
 
 btnPrevious.addEventListener('click', function() {
 
@@ -52,6 +58,14 @@ btnPrevious.addEventListener('click', function() {
     activeImg--;
 
     imgElements[activeImg].classList.add('active');
+
+    // thumbnails
+
+    imgThumnails[activeThum].classList.remove('active');
+
+    activeThum--;
+
+    imgThumnails[activeThum].classList.add('active');
 });
 
 btnNext.addEventListener('click', function() {
@@ -61,6 +75,14 @@ btnNext.addEventListener('click', function() {
     activeImg++;
 
     imgElements[activeImg].classList.add('active');
+
+    // thumbnails
+
+    imgThumnails[activeThum].classList.remove('active');
+
+    activeThum++;
+
+    imgThumnails[activeThum].classList.add('active');
 
 });
 
