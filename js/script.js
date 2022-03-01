@@ -43,11 +43,24 @@ console.log(imgElements);
 const btnPrevious = document.querySelector('.previous');
 const btnNext = document.querySelector('.next');
 
+let activeImg = 0;
+
 btnPrevious.addEventListener('click', function() {
-    
+
+    imgElements[activeImg].classList.remove('active');
+
+    activeImg--;
+
+    imgElements[activeImg].classList.add('active');
 });
 
 btnNext.addEventListener('click', function() {
     
+    imgElements[activeImg].classList.remove('active');
+
+    activeImg++;
+
+    imgElements[activeImg].classList.add('active');
+
 });
 
