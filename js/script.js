@@ -1,12 +1,3 @@
-/* 
-* a) creare un event listener per i due bottoni (previous e next)
-*
-* b) dobbiamo inserire alla classe main-img l'immagine
-*       - utilizziamo append()
-* 
-*
-*
-*/
 
 const items = [
     'img/01.jpg',
