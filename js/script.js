@@ -35,45 +35,49 @@ const imgThumnails = document.querySelectorAll('.img-list > li');
 imgThumnails[0].classList.add('active');
 console.log(imgThumnails);
 
-// bottoni
+// Prendo i bottoni
 const btnPrevious = document.querySelector('.previous');
 const btnNext = document.querySelector('.next');
 
-let activeImg = 0;
-let activeThum = 0;
+//let activeImg = 0;
+//let activeThum = 0;
+let active = 0;
 
+// Bottone per tornare indietro di un immagine
 btnPrevious.addEventListener('click', function() {
 
-    imgElements[activeImg].classList.remove('active');
+    // Immagine attiva e thumbnails elemento attivo
+    imgElements[active].classList.remove('active');
+    imgThumnails[active].classList.remove('active');
 
-    activeImg--;
 
-    imgElements[activeImg].classList.add('active');
+    if (!active == 0 ) {
+        active--;
+    } else {
+        active = imgElements.length - 1;
+    }
 
-    // thumbnails
+    imgElements[active].classList.add('active');
+    imgThumnails[active].classList.add('active');
 
-    imgThumnails[activeThum].classList.remove('active');
-
-    activeThum--;
-
-    imgThumnails[activeThum].classList.add('active');
 });
 
+// Bottone per andare avanti di un immagine
 btnNext.addEventListener('click', function() {
     
-    imgElements[activeImg].classList.remove('active');
+    // Immagine attiva e thumbnails elemento attivo
+    imgElements[active].classList.remove('active');
+    imgThumnails[active].classList.remove('active');
 
-    activeImg++;
 
-    imgElements[activeImg].classList.add('active');
+    if (active < imgElements.length - 1) {
+        active++;
+    } else {
+        active = 0;
+    }
 
-    // thumbnails
-
-    imgThumnails[activeThum].classList.remove('active');
-
-    activeThum++;
-
-    imgThumnails[activeThum].classList.add('active');
+    imgElements[active].classList.add('active');
+    imgThumnails[active].classList.add('active');
 
 });
 
